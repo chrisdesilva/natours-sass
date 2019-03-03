@@ -1,0 +1,32 @@
+/*position top ensures image will crop bottom, keep top attached. 95vh takes up 95% of viewport height
+  change opacity with slider on linear gradient to allow image from url to appear 
+  clip-path takes in coordinates starting with x, y in top left, then top right, then bottom right, then bottom left
+  set position relative to serve as parent element for other elements to refer to */
+  .header {
+    height: 95vh;
+    background-image: linear-gradient(to right bottom, rgba($color-primary-light, 0.8), rgba($color-primary-dark, 0.8)), url(../img/hero.jpg);
+    background-size: cover;
+    background-position: top;
+    position: relative;
+    clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+  
+    // position absolute puts positioning relative to parent element. & copies .header and applies to each element 
+    &__logo-box {
+      position: absolute;
+      top: 4rem;
+      left: 4rem;
+    }
+  
+    &__logo {
+      height: 3.5rem;
+    }
+    
+  // positioning will center the text-box element transform is relative to itself
+    &__text-box {
+      position: absolute;
+      top: 40%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+    }
+  }
