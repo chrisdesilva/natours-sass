@@ -16,6 +16,16 @@
     box-shadow: 0 1rem 3rem rgba($color-black, .1);
     text-align: center;
     cursor: pointer;
+
+    @include respond(tab-port) {
+      top: 4rem;
+      bottom: 4rem;
+    }
+
+    @include respond(phone) {
+      top: 3rem;
+      bottom: 3rem;
+    }
   }
 
   //top and right 6.5 comes from 7rem in button and 6rem in background
@@ -30,6 +40,16 @@
     z-index: 1000;
     -webkit-transition: transform 800ms cubic-bezier(0.86, 0, 0.07, 1);
     transition: transform 800ms cubic-bezier(0.86, 0, 0.07, 1);
+
+    @include respond(tab-port) {
+      top: 4.5rem;
+      bottom: 4.5rem;
+    }
+ 
+    @include respond(phone) {
+      top: 3.5rem;
+      bottom: 3.5rem;
+    }
   }
 
   //container for navigation 
