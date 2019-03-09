@@ -6,11 +6,28 @@
   box-sizing: inherit;
 }
 
-/* set base font-size at 62.5% off of the default browser font-size of 16px -> sets font-size as 10px and allows rem to be used  */
+// set base font-size at 62.5% off of the default browser font-size of 16px -> sets font-size as 10px and allows rem to be used  
 html {
   font-size: 62.5%;
+//conflicting media queries default to last query. In this project, put tab-port second to ensure correct order for responsive design
+  @include respond(tab-land) {
+    font-size: 56.25%; //1rem = 9px, 9/16 = 56.25%
+  }
+
+  @include respond(tab-port) {
+    font-size: 50%; //1rem = 8px, 8/16 = 50%
+  }
+
+  @include respond(big-desktop) {
+    font-size: 75%; //1rem = 12, 12/16 = 75%
+  }
 }
 
 body {
   box-sizing: border-box;
+  padding: 3rem;
+
+  @include respond(tab-port) {
+    padding: 0;
+  }
 }
